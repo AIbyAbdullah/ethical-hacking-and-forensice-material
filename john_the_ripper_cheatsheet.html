@@ -1,0 +1,130 @@
+
+<h2 class="sr-only">John the Ripper Commands Cheat Sheet - Security Assignment</h2>
+<div style="font-family: var(--font-mono); padding: 1rem 0;">
+
+<div style="background: #1a1a2e; border-radius: var(--border-radius-lg); padding: 1.5rem; margin-bottom: 1rem; border: 0.5px solid #333;">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid #333;">
+    <i class="ti ti-shield-lock" style="font-size: 22px; color: #4ade80;" aria-hidden="true"></i>
+    <span style="color: #4ade80; font-size: 16px; font-weight: 500; font-family: var(--font-mono);">John The Ripper — Complete Command Reference</span>
+    <span style="margin-left: auto; font-size: 11px; color: #888; background: #2a2a3e; padding: 3px 8px; border-radius: 4px;">Educational Use Only</span>
+  </div>
+
+  <div style="display: grid; gap: 1rem;">
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #4ade80;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">1 — Basic Usage</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #fbbf24;">/etc/passwd</span><br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Default mode par password crack karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #a78bfa;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">2 — Wordlist / Dictionary Attack</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--wordlist=</span><span style="color: #fbbf24;">/usr/share/wordlists/rockyou.txt</span> <span style="color: #fbbf24;">hash.txt</span><br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Wordlist (dictionary) se attack karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #fb923c;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">3 — Hash Format Specify karna</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--format=</span><span style="color: #fbbf24;">md5crypt</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--format=</span><span style="color: #fbbf24;">sha512crypt</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--format=</span><span style="color: #fbbf24;">NT</span> hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Hash type manually set karo (MD5, SHA512, NTLM)</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #38bdf8;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">4 — Cracked Passwords Dekhna</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--show</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--show --format=</span><span style="color: #fbbf24;">md5crypt</span> hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Jo passwords crack hue hain unhe display karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #f472b6;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">5 — Incremental Mode (Brute Force)</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--incremental</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--incremental=</span><span style="color: #fbbf24;">Digits</span> hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Brute force — har combination try karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #34d399;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">6 — Rules ke saath Wordlist</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--wordlist=</span>rockyou.txt <span style="color: #f87171;">--rules</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--wordlist=</span>rockyou.txt <span style="color: #f87171;">--rules=</span><span style="color: #fbbf24;">Jumbo</span> hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Mangling rules apply karo (uppercase, l33t, etc.)</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #fbbf24;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">7 — /etc/shadow ke saath use karna</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">unshadow</span> <span style="color: #fbbf24;">/etc/passwd /etc/shadow</span> &gt; combined.txt<br>
+        <span style="color: #7dd3fc;">john</span> combined.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># passwd + shadow combine karo phir crack karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #e879f9;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">8 — Supported Formats List karna</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--list=formats</span><br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--list=subformats</span><br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Saare supported hash formats dekho</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #f87171;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">9 — Session Save & Resume</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--session=</span><span style="color: #fbbf24;">mysession</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--restore=</span><span style="color: #fbbf24;">mysession</span><br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Session save karo aur baad mein resume karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #67e8f9;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">10 — Multiple CPU Cores</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--fork=</span><span style="color: #fbbf24;">4</span> hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--node=</span><span style="color: #fbbf24;">1-2/3</span> hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Multiple cores ya nodes use karo speed ke liye</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #a3e635;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">11 — zip2john / pdf2john (File Hashes)</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">zip2john</span> <span style="color: #fbbf24;">file.zip</span> &gt; zip_hash.txt<br>
+        <span style="color: #7dd3fc;">john</span> zip_hash.txt<br>
+        <span style="color: #7dd3fc;">pdf2john</span> <span style="color: #fbbf24;">file.pdf</span> &gt; pdf_hash.txt<br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># ZIP/PDF password crack karo</span>
+      </div>
+    </div>
+
+    <div style="background: #0f1923; border-radius: 8px; padding: 1rem; border-left: 3px solid #fb7185;">
+      <div style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; font-family: var(--font-sans);">12 — Help & Version</div>
+      <div style="color: #f0f0f0; font-size: 13px; line-height: 2.2;">
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--help</span><br>
+        <span style="color: #7dd3fc;">john</span> <span style="color: #f87171;">--version</span><br>
+        <span style="color: #94a3b8; font-size: 12px; font-family: var(--font-sans);"># Help aur version info dekho</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 1rem; padding: 0.75rem; background: #1e2a1e; border-radius: 8px; border: 0.5px solid #2d5a2d; display: flex; align-items: center; gap: 8px;">
+    <i class="ti ti-alert-triangle" style="font-size: 16px; color: #4ade80;" aria-hidden="true"></i>
+    <span style="color: #86efac; font-size: 12px; font-family: var(--font-sans);">Sirf apne lab/authorized systems par use karo. Unauthorized use illegal hai.</span>
+  </div>
+</div>
+
+</div>
